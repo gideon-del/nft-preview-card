@@ -1,0 +1,102 @@
+@forward 'util';
+@use './util/color' as color;
+@use './util/font' as font;
+
+
+/*----------------*/
+/*     Reset     */
+/*---------------*/
+*,
+*::after,
+*::before{
+    margin:0;
+}
+body{
+    min-width: 100vw;
+    min-height: 100vh;
+    position:relative;
+    font-family: 'Outfit', sans-serief;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p{
+    padding:0;
+}
+input,
+textarea,
+button,
+select{
+    font:inherit;
+}
+image,
+picture{
+    width:100%;
+    display:block;
+    object-fit: cover;
+}
+ol, ul,li{
+    list-style-type: none;
+    text-decoration: none;
+}
+a,.a:visited{
+    text-decoration: none;
+    color:inherit;
+}
+/*Components*/
+body {
+    font-family:'Outfit',sans-serif;
+    background-color: color.$bg-db;
+}
+.flex{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    &__row{
+        flex-direction:row;
+    }
+    &__start{
+        justify-content:flex-start;
+        gap:10px;
+    }
+    
+}
+.card{
+    width:320px;
+    height:550px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
+    background-color: color.$card-db;
+}
+
+.image{
+    width: 90%;
+    height:16rem;
+    border-radius:5px;
+    border: 2px red solid;
+    &__round{
+        width:3rem;
+        height:3rem;
+        border-radius:50%;
+        border: solid color.$white 0.10rem
+    }
+}
+h1{
+    color: color.$white;
+    font-weight: font.$xl;
+    font-size:1.25rem;
+}
+.info{
+    color: color.$s-blue;
+    font-size:18px;
+}
+.price{
+    color: color.$cyan;
+}
+.line{
+    border-bottom: solid color.$line 2px;
+}
