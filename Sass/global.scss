@@ -1,102 +1,133 @@
-@forward 'util';
-@use './util/color' as color;
-@use './util/font' as font;
-
+@forward "util";
+@use "./util/color" as color;
+@use "./util/font" as font;
 
 /*----------------*/
 /*     Reset     */
 /*---------------*/
 *,
 *::after,
-*::before{
-    margin:0;
+*::before {
+  margin: 0;
 }
-body{
-    min-width: 100vw;
-    min-height: 100vh;
-    position:relative;
-    font-family: 'Outfit', sans-serief;
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Outfit", sans-serief;
 }
 body,
 h1,
 h2,
 h3,
 h4,
-p{
-    padding:0;
+p {
+  padding: 0;
 }
 input,
 textarea,
 button,
-select{
-    font:inherit;
+select {
+  font: inherit;
 }
-image,
-picture{
-    width:100%;
-    display:block;
-    object-fit: cover;
+
+ol,
+ul,
+li {
+  list-style-type: none;
+  text-decoration: none;
 }
-ol, ul,li{
-    list-style-type: none;
-    text-decoration: none;
-}
-a,.a:visited{
-    text-decoration: none;
-    color:inherit;
+a,
+.a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 /*Components*/
 body {
-    font-family:'Outfit',sans-serif;
-    background-color: color.$bg-db;
+  font-family: "Outfit", sans-serif;
+  background-color: color.$bg-db;
+  overflow: hidden;
+  @media only screen and (max-width: 480px) {
+    overflow: hidden;
+  }
 }
-.flex{
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    &__row{
-        flex-direction:row;
-    }
-    &__start{
-        justify-content:flex-start;
-        gap:10px;
-    }
-    
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__row {
+    flex-direction: row;
+  }
+  &__start {
+    justify-content: flex-start;
+    gap: 10px;
+  }
 }
-.card{
-    width:320px;
-    height:550px;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
-    background-color: color.$card-db;
+.card {
+  width: 25vw;
+  height: max-content;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+  background-color: color.$card-db;
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+    height: max-content;
+  }
+  @media screen and(max-width: 425px) {
+    height: 90vh;
+  }
 }
 
-.image{
-    width: 90%;
-    height:16rem;
-    border-radius:5px;
-    border: 2px red solid;
-    &__round{
-        width:3rem;
-        height:3rem;
-        border-radius:50%;
-        border: solid color.$white 0.10rem
-    }
+.image {
+  width: 100%;
+  height: 16rem;
+  border-radius: 6px;
+  margin: 6px;
+  display: block;
+  object-fit: cover;
+  &__round {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: solid color.$white 0.1rem;
+  }
 }
-h1{
-    color: color.$white;
-    font-weight: font.$xl;
-    font-size:1.25rem;
+
+h1 {
+  font-weight: font.$xl;
+  font-size: clamp(14px, 1.5rem, 20px);
 }
-.info{
-    color: color.$s-blue;
-    font-size:18px;
+.info {
+  color: color.$s-blue;
+  font-size: 18px;
 }
-.price{
-    color: color.$cyan;
+.time {
+  color: color.$s-blue;
 }
-.line{
-    border-bottom: solid color.$line 2px;
+.price {
+  color: color.$cyan;
+}
+.line {
+  border-bottom: solid color.$line 2px;
+}
+.img {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 16rem;
+  background-color: color.$cyan;
+  z-index: 100;
+  opacity: 0;
+  transition: all ease-in-out 700ms;
+  &:hover {
+    opacity: 0.8;
+  }
+  image {
+    width: 12%;
+    height: 10%;
+  }
 }

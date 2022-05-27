@@ -1,3 +1,4 @@
+@use 'color' as color;
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 //Font-weights
@@ -13,4 +14,12 @@ $xl : 37.5rem;
 }
 .tx-center{
     text-align:center;
+}
+//text-color
+.tx-white{
+    color:white;
+    transition: all ease-in 500ms ;
+    &:hover{
+        color:color.$cyan;
+    }
 }
