@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <link rel="stylesheet" href="./style/global.css" type="text/css">
-  <title>Frontend Mentor | NFT preview card component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-
-</head>
-<body class="flex">
-  <main class="card pd2 pd4">
-   <section class='width flex'>
-    <img  class="image mg-center mg1" src="./images/image-equilibrium.jpg" alt=""/>
-   </section>
-    <h1 class="mg1 mg3">
-       Equilibrium #3429
-    </h1>
-    <p class="mg1 mg3">
-      Our Equilibrium collection promotes balance and calm.
-    </p>
-    <section class="flex flex__row mg1 mg3 line pd3">
-  
-      <p class="width price">
-       <img src="./images/icon-ethereum.svg"/> 0.041 ETH
+    <link rel="stylesheet" href="./style/global.css" type="text/css" />
+    <title>Frontend Mentor | NFT preview card component</title>
+  </head>
+  <body class="flex">
+    <main class="card pd2 pd4 pd3">
+      <section class="width flex img">
+        <img
+          class="image mg-center mg1"
+          src="./images/image-equilibrium.jpg"
+          alt=""
+        />
+        <div class='overlay mg-center mg1 flex'>
+         <img src='/images/icon-view.svg' class=''/>
+        </div>
+      </section>
+      <h1 class="mg1 mg3 tx-white">Equilibrium #3429</h1>
+      <p class="mg1 mg3 info">
+        Our Equilibrium collection promotes balance and calm.
       </p>
-      <p  class="width tx-right">3 days left</p>
-    </section>
-    <section class="flex flex__row flex__start width">
-       <img src='./images/image-avatar.png' class='image__round relative' alt='' />
-        <p>Creation of Jules Wyvern</p>
-    </section>
-  </main>
-  
-  <footer class="attribution" style="display:none">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
-</body>
+      <section class="flex flex__row mg1 mg3 line pd3">
+        <p class="width price">
+          <img src="./images/icon-ethereum.svg" /> 0.041 ETH
+        </p>
+        <p class="width tx-right time">
+          <img src="./images/icon-clock.svg" class="image-center" alt="Clock" />
+          3 days left
+        </p>
+      </section>
+      <section class="flex flex__row flex__start width pd3">
+        <img src="./images/image-avatar.png" class="image__round" alt="" />
+        <p>Creation of <span class='tx-white'>Jules Wyvern<span></p>
+      </section>
+    </main>
+
+    <footer class="attribution" style="display: none">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
 </html>
